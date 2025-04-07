@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Evolution - Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- navigation menu -->
+    <nav id="navbar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="history.html" class="nav-link">History</a>
+        <a href="modern.html" class="nav-link">Modern Web</a>
+        <a href="quiz.html" class="nav-link">Quiz</a>
+        <a href="references.html" class="nav-link">References</a>
+    </nav>
+
+    <main>
+        <!-- quiz page title and introduction -->
+        <h1>Self-Assessment Quiz</h1>
+        <p>
+            Answer the questions below and click <strong>Submit</strong> to see your score. 
+            You need at least 3 out of 5 correct answers to pass.
+        </p>
+        
+        <!-- quiz form -->
+        <form id="quizForm" onsubmit="return false;">
+            <!-- question 1: (multiple choice) -->
+            <div class="question">
+                <p><strong>1. Who is credited with inventing the World Wide Web?</strong></p>
+                <label><input type="radio" name="q1" id="q1-correct" value="Tim Berners-Lee"> Tim Berners-Lee</label><br>
+                <label><input type="radio" name="q1" value="Bill Gates"> Bill Gates</label><br>
+                <label><input type="radio" name="q1" value="Mark Zuckerberg"> Mark Zuckerberg</label><br>
+                <label><input type="radio" name="q1" value="Steve Jobs"> Steve Jobs</label><br>
+                <!-- feedback for question 1 -->
+                <p id="feedback1" class="feedback"></p>
+            </div>
+
+            <!-- question 2: (multiple choice) -->
+            <div class="question">
+                <p><strong>2. Which web browser, introduced in 1993, was the first to display images inline with text?</strong></p>
+                <label><input type="radio" name="q2" value="Netscape Navigator"> Netscape Navigator</label><br>
+                <label><input type="radio" name="q2" value="Internet Explorer"> Internet Explorer</label><br>
+                <label><input type="radio" name="q2" id="q2-correct" value="Mosaic"> Mosaic</label><br>
+                <label><input type="radio" name="q2" value="Google Chrome"> Google Chrome</label><br>
+                <!-- feedback for question 2 -->
+                <p id="feedback2" class="feedback"></p>
+            </div>
+
+            <!-- question 3: (multiple choice) -->
+            <div class="question">
+                <p><strong>3. Which technology was introduced in the late 1990s to make web pages more interactive?</strong></p>
+                <label><input type="radio" name="q3" value="CSS"> CSS</label><br>
+                <label><input type="radio" name="q3" id="q3-correct" value="JavaScript"> JavaScript</label><br>
+                <label><input type="radio" name="q3" value="HTML"> HTML</label><br>
+                <label><input type="radio" name="q3" value="HTTP"> HTTP</label><br>
+                <!-- feedback for question 3 -->
+                <p id="feedback3" class="feedback"></p>
+            </div>
+
+            <!-- question 4: (fill in the blank) -->
+            <div class="question">
+                <p><strong>4. In what year did the first website go live to the public?</strong></p>
+                <label>Year: <input type="text" name="q4" id="q4-answer" /></label>
+                <!-- feedback for question 4 -->
+                <p id="feedback4" class="feedback"></p>
+            </div>
+
+            <!-- question 5: (multiple select) -->
+            <div class="question">
+                <p>
+                    <strong>5. Which of the following websites are examples of the Web 2.0 era? 
+                    <small>(Select all that apply.)</small></strong>
+                </p>
+                <label><input type="checkbox" name="q5" id="q5-fb"> Facebook</label><br>
+                <label><input type="checkbox" name="q5" id="q5-youtube"> YouTube</label><br>
+                <label><input type="checkbox" name="q5" id="q5-netscape"> Netscape</label><br>
+                <label><input type="checkbox" name="q5" id="q5-twitter"> Twitter</label><br>
+                <label><input type="checkbox" name="q5" id="q5-mosaic"> Mosaic</label><br>
+                <!-- feedback for question 5 -->
+                <p id="feedback5" class="feedback"></p>
+            </div>
+
+            <!-- submit and restart buttons -->
+            <div class="button-row">
+                <button type="button" onclick="scoreQuiz()">Submit</button>
+                <button type="button" onclick="restartQuiz()">Restart Quiz</button>
+            </div>
+        </form>
+
+        <!-- overall quiz result (score and pass/fail message) -->
+        <p id="result" class="feedback"></p>
+    </main>
+
+    <!-- JavaScript: quiz grading and reset logic -->
+    <script>
+        // function to grade the quiz and display feedback and result
+        function scoreQuiz() {
+            var correctCount = 0; 
+
+            // question 1: check if the correct radio is selected
+            if (document.getElementById('q1-correct').checked) {
+                correctCount++;
+                document.getElementById('feedback1').textContent = "Correct!";
+                document.getElementById('feedback1').style.color = "green";
+            } 
+            else {
+                document.getElementById('feedback1').textContent = "Incorrect.";
+                document.getElementById('feedback1').style.color = "red";
+            }
+
+            // question 2: check if Mosaic (correct) is selected
+            if (document.getElementById('q2-correct').checked) {
+                correctCount++;
+                document.getElementById('feedback2').textContent = "Correct!";
+                document.getElementById('feedback2').style.color = "green";
+            } 
+            else {
+                document.getElementById('feedback2').textContent = "Incorrect.";
+                document.getElementById('feedback2').style.color = "red";
+            }
+
+            // question 3: check if JavaScript (correct) is selected
+            if (document.getElementById('q3-correct').checked) {
+                correctCount++;
+                document.getElementById('feedback3').textContent = "Correct!";
+                document.getElementById('feedback3').style.color = "green";
+            } 
+            else {
+                document.getElementById('feedback3').textContent = "Incorrect.";
+                document.getElementById('feedback3').style.color = "red";
+            }
+
+            // question 4: check the text input value (should be "1991")
+            var answer4 = document.getElementById('q4-answer').value.trim();
+            if (answer4 === "1991") {
+                correctCount++;
+                document.getElementById('feedback4').textContent = "Correct!";
+                document.getElementById('feedback4').style.color = "green";
+            } 
+            else {
+                document.getElementById('feedback4').textContent = "Incorrect.";
+                document.getElementById('feedback4').style.color = "red";
+            }
+
+            // question 5: check which checkboxes are selected (Facebook, Twitter, YouTube must be selected; 
+            // Netscape and Mosaic must not be)
+            var fbChecked = document.getElementById('q5-fb').checked;
+            var twChecked = document.getElementById('q5-twitter').checked;
+            var ytChecked = document.getElementById('q5-youtube').checked;
+            var nsChecked = document.getElementById('q5-netscape').checked;
+            var moChecked = document.getElementById('q5-mosaic').checked;
+            if (fbChecked && twChecked && ytChecked && !nsChecked && !moChecked) {
+                correctCount++;
+                document.getElementById('feedback5').textContent = "Correct!";
+                document.getElementById('feedback5').style.color = "green";
+            } 
+            else {
+                document.getElementById('feedback5').textContent = "Incorrect.";
+                document.getElementById('feedback5').style.color = "red";
+            }
+
+            // calculate score and display result message
+            var resultText = "You answered " + correctCount + " out of 5 correctly. ";
+            if (correctCount >= 3) {
+                resultText += "Congratulations, you passed!";
+                document.getElementById('result').style.color = "green";
+            } 
+            else {
+                resultText += "You did not pass. Try again!";
+                document.getElementById('result').style.color = "red";
+            }
+            document.getElementById('result').textContent = resultText;
+        }
+
+        // function to reset the quiz form and clear all feedback
+        function restartQuiz() {
+            // reset all form inputs to default state
+            document.getElementById('quizForm').reset();
+            // clear feedback messages for each question
+            for (var i = 1; i <= 5; i++) {
+                var fbElem = document.getElementById('feedback' + i);
+                fbElem.textContent = "";
+                fbElem.style.color = "";
+            }
+            // clear result text
+            document.getElementById('result').textContent = "";
+            document.getElementById('result').style.color = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* basic styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+/* heading styles */
+h1 {
+    font-size: 2em;
+    margin: 0.5em 0;
+    color: #333333;
+}
+h2 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    color: #333333;
+}
+
+
+/* navigation nenu styles */
+#navbar {
+    background-color: #eeeeee;
+    padding: 10px;
+    text-align: right;
+}
+.nav-link {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #dbbf61;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border: 2px solid #dbbf61;
+}
+.nav-link:hover {
+    background-color: #ffffff;
+    color: #dbbf61;
+}
+
+
+/* layout for two column sections */
+.flex-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+.flex-container img {
+    margin-left: 20px;
+}
+
+
+/* image styles */
+img {
+    max-width: 30%;
+    height: auto;
+    border: 1px solid #cccccc;
+}
+
+/* table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+table, th, td {
+    border: 1px solid #000000;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
