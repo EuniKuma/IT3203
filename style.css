@@ -37,6 +37,7 @@ nav#navbar {
     display: flex;
     gap: 15px;
     justify-content: center;
+    z-index: 100;
 }
 .nav-link {
     text-decoration: none;
@@ -49,7 +50,7 @@ nav#navbar {
     background-color: #FFD1DC;
 }
 
-/* mobile toggle button */
+/* toggle button style */
 #nav-toggle {
     display: none;
 }
@@ -64,8 +65,8 @@ nav#navbar {
     position: absolute;
     right: 10px;
     top: 10px;
+    z-index: 200;
 }
-
 /* responsive: mobile */
 @media (max-width: 767px) {
     /* show toggle button */
