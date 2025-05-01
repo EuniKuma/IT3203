@@ -53,12 +53,11 @@ nav#navbar {
 #nav-toggle {
     display: none;
 }
-/* style the hamburger label (only show on mobile) */
 .nav-toggle-label {
     display: none;
-    font-size: 1.5em;
+    font-size: 1.2em;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 4px 8px;
     border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
