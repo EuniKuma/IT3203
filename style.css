@@ -68,32 +68,35 @@ nav#navbar {
 
 /* responsive: mobile */
 @media (max-width: 767px) {
-    /* show hamburger icon */
+    /* show toggle button */
     .nav-toggle-label {
         display: inline-block;
     }
+    /* hide links by default */
     .nav-links {
         display: none;
         flex-direction: column;
-        width: 100%;
-        background-color: #FFE4E1;
         position: absolute;
         top: 100%;
-        left: 0;
+        right: 10px;
+        background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 5px;
+        padding: 5px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         z-index: 100;
     }
+    /* show links when toggled */
     #nav-toggle:checked ~ .nav-links {
         display: flex;
     }
     .nav-links .nav-link {
         display: block;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-        border-top: 1px solid #ddd;
+        padding: 8px 15px;
+        text-align: left;
     }
-    .nav-links .nav-link:last-child {
-        border-bottom: none;
+    .nav-links .nav-link:not(:last-child) {
+        border-bottom: 1px solid #ddd;
     }
     .flex-container {
         display: flex;
@@ -110,13 +113,6 @@ nav#navbar {
     max-width: 600px;
     margin: 15px auto;
     border-radius: 8px;
-}
-/* quiz page decorative image */
-.quiz-image {
-    display: block;
-    max-width: 300px;
-    width: 80%;
-    margin: 10px auto 15px;
 }
 /* flex-container for history/modern illustrations */
 .flex-container img {
