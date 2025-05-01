@@ -63,8 +63,9 @@ nav#navbar {
     border-radius: 5px;
     background-color: #fff;
     position: absolute;
-    right: 10px;
+    left: 50%;
     top: 10px;
+    transform: translateX(-50%);
     z-index: 200;
 }
 /* responsive: mobile */
