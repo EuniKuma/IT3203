@@ -70,6 +70,12 @@ nav#navbar {
 }
 /* responsive: mobile */
 @media (max-width: 767px) {
+    main {
+        margin-top: 30px;
+    }
+    nav#navbar {
+        padding: 10px 10px 20px;  /* extra bottom padding for gradient coverage */
+    }
     /* show toggle button */
     .nav-toggle-label {
         display: inline-block;
