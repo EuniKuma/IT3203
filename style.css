@@ -18,6 +18,9 @@ main {
 h1, h2, h3 {
     margin: 20px 0 10px;
 }
+main > h1 {
+    text-align: center;
+}
 p, dl, ul {
     margin: 10px 0;
 }
