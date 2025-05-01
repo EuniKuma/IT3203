@@ -1,138 +1,163 @@
-/* import font (Comic Neue) */
+/* import font */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
-/* global styles and layout */
+/* base style */
 body {
+    background-color: #E0F7FA;
+    font-family: 'Comic Neue', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Comic Neue', sans-serif;
-    background-color: #FFF4FB;  /* soft pastel pink background */
     color: #333;
-}
-header, footer {
-    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
-    text-align: center;
-    padding: 10px 0;
-}
-header nav .nav-link {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
-    font-weight: bold;
-}
-header nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 5px;
-    padding: 2px 5px;
 }
 main {
     max-width: 800px;
     margin: 20px auto;
-    background: #FFFFFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0 15px;
+    background-color: #FFFFFF;
 }
-main h1 {
-    text-align: center;
-    margin-top: 0;
+h1, h2, h3 {
+    margin: 20px 0 10px;
 }
-main p {
-    line-height: 1.5;
-    margin-bottom: 1em;
+p, dl, ul {
+    margin: 10px 0;
 }
-main a {
-    color: #9b59b6;
-    text-decoration: none;
-}
-main a:hover {
-    text-decoration: underline;
-}
-.flex-container {
-    background: #F3E8FF;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 1em;
-    overflow: auto;
-}
-.flex-container img {
+img {
     max-width: 100%;
     height: auto;
-    float: right;
-    margin-left: 15px;
+}
+
+/* navigation style */
+nav#navbar {
+    background-color: #FFE4E1;
+    padding: 10px;
+    position: relative;
+}
+/* container for links; flex for desktop */
+.nav-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.nav-link:hover {
+    background-color: #FFD1DC;
+}
+
+/* mobile toggle button */
+/* Hide checkbox by default */
+#nav-toggle {
+    display: none;
+}
+/* style the hamburger label (only show on mobile) */
+.nav-toggle-label {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/* responsive: mobile */
+@media (max-width: 767px) {
+    /* Show hamburger icon */
+    .nav-toggle-label {
+        display: inline-block;
+    }
+    /* Hide links until toggled */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #FFE4E1;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+    }
+    #nav-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+    .nav-links .nav-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+    }
+    .nav-links .nav-link:last-child {
+        border-bottom: none;
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+/* Intro image on home page */
+.intro-image {
+    display: block;
+    width: 80%;
+    max-width: 600px;
+    margin: 15px auto;
     border-radius: 8px;
 }
+/* quiz page decorative image */
+.quiz-image {
+    display: block;
+    max-width: 300px;
+    width: 80%;
+    margin: 10px auto 15px;
+}
+/* flex-container for history/modern illustrations */
+.flex-container img {
+    max-width: 300px;
+    border-radius: 5px;
+}
+/* timeline table styling */
 #timeline {
     width: 100%;
     border-collapse: collapse;
-    background: #F3E8FF;
-    border: 1px solid #d0c8df;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 1em;
+    margin: 15px 0;
 }
-#timeline th, 
+#timeline th,
 #timeline td {
-    border: 1px solid #e0dfe0;
-    padding: 8px 12px;
+    border: 1px solid #ccc;
+    padding: 8px;
     text-align: left;
 }
 #timeline th {
-    background: #DFC8F6;
+    background-color: #F0F8FF;
 }
-#timeline th:first-child, 
-#timeline td:first-child {
-    text-align: center;
-}
-dl {
-    background: #F3E8FF;
-    padding: 15px;
-    border-radius: 8px;
-}
-dl dt {
-    font-weight: bold;
-}
-dl dd {
-    margin: 0 0 10px 20px;
-}
+/* quiz form components */
 .question {
-    background: #F3E8FF;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-.feedback {
-    font-weight: bold;
-}
-.button-row {
-    text-align: center;
     margin: 15px 0;
 }
-button {
-    background-color: #a6c1ee;
-    color: #333;
-    border: none;
+.button-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+.button-row button {
     padding: 8px 16px;
-    margin: 5px;
-    border-radius: 5px;
-    font-weight: bold;
+    font-size: 1em;
     cursor: pointer;
 }
-button:hover {
-    background-color: #95add6;
-}
-input[type="text"] {
-    padding: 4px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-footer p {
-    margin: 0;
-    color: #333;
-    font-size: 0.9em;
-}
-main ul {
-    background: #F3E8FF;
-    padding: 15px 20px;
-    border-radius: 8px;
+.feedback {
+    margin: 5px 0;
+    font-weight: bold;
 }
