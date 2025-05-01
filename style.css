@@ -28,7 +28,7 @@ img {
 
 /* navigation style */
 nav#navbar {
-    background-color: #FFE4E1;
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
     padding: 10px;
     position: relative;
 }
