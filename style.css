@@ -14,7 +14,8 @@ main {
     margin: 20px auto;
     padding: 0 15px;
     background-color: #FFFFFF;
-    border-radius: 8px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 h1, h2, h3 {
     margin: 20px 0 10px;
