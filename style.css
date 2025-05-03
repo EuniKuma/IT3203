@@ -27,6 +27,9 @@ main.index-boxes .content-box {
     margin: 20px 0;
     border-radius: 8px;
 }
+main.index-boxes .content-box:first-child h1 {
+    text-align: center;
+}
 h1, h2, h3 {
     margin: 20px 0 10px;
 }
