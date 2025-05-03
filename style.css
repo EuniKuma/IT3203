@@ -17,6 +17,16 @@ main {
     border-radius: 20px;
     overflow: hidden;
 }
+main.index-boxes {
+    background-color: transparent;
+}
+
+main.index-boxes .content-box {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
 h1, h2, h3 {
     margin: 20px 0 10px;
 }
